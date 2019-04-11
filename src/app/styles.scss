@@ -1,0 +1,101 @@
+$col: black;
+$textCol: #fff;
+$imp: !important;
+$grad-begin: #5A0F43;
+$grad-end: #D70125;
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 2000px;
+}
+
+#header-info{
+  width: 100%;
+  background: darkgreen;
+  height: 150px;
+}
+
+header{
+  width: 100%;
+  //background: $col;
+  background: linear-gradient(to right, $grad-begin, $grad-end);
+  height: 50px;
+  ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    li{
+      display: inline-block;
+      color: #fff;
+      padding: 0 10px 0 0;
+      height: 50px;
+      line-height: 50px;
+      cursor: pointer;
+      &:hover{
+        background: green;
+      }
+      &:last-child, &:first-child{
+        cursor: default;
+        &:hover{
+          background: $col;
+        }
+      }
+    }
+    .first-li{
+      width: 40px;
+      height: 40px;
+      margin-right: 25px;
+      padding-right: 0;
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      -o-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      img{
+        margin: 0 0 -9px 9px;
+      }
+    }
+    .search input{
+      width: 120px;
+      height: 25px;
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+/* auxiliary classes */
+
+.animate1{
+  transition: .2s linear;
+  transform: rotateY(90deg);
+  width: 2px $imp;
+  margin-right: 0 $imp;
+}
+.animate2{
+  transition: .2s linear;
+  transform: rotateY(0deg);
+  width: 40px $imp;
+  margin-right: 25px $imp;
+}
+
+.visible-on{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s linear;
+}
+.visible-off{
+  opacity: 0;
+  transition: opacity .3s linear;
+  visibility: hidden;
+}
+
+.sticky-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
